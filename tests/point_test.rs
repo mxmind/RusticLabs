@@ -28,4 +28,12 @@ mod point2d_tests {
 
         assert_eq!(p1.cross(p2), -59.0);
     }
+
+    #[test]
+    pub fn test_min() {
+        let p1 = Point2D::new(1.0, 3.0);
+        let p2 = Point2D::new(2.0, 2.0);
+
+        assert_eq!(p1.min(p2), Point2D::new(1.0, 2.0));
+    }
 }
