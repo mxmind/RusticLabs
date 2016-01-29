@@ -1,0 +1,30 @@
+[package]
+
+name = "matrix"
+version = "0.0.1"
+authors = [ "Vlad Zdomishchuk <mxmind@gmail.com>" ]
+
+[features]
+default = []
+plugins = ["serde", "serde_macros", "heapsize", "heapsize_plugin"]
+
+[dependencies]
+rustc-serialize = "0.3.2"
+num = {version = "0.1.24", default-features = false}
+log = "0.3.1"
+serde = {version = "*", optional = true}
+serde_macros = {version = "*", optional = true}
+
+[dependencies.heapsize]
+version = "0.2"
+optional = true
+
+[dependencies.heapsize_plugin]
+version = "0.1.0"
+optional = true
+
+[dev-dependencies]
+rand = "0.3.7"
+
+[[bin]]
+name = "matrix"
