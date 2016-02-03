@@ -22,9 +22,8 @@ impl<S, D, T> Deserialize for ScaleFactor<S, D, T> where T: Deserialize
 #[cfg(feature = "plugins")]
 impl<S, D, T> Serialize for ScaleFactor<S, D, T> where T: Serialize
 {
-    fn serialize(&self, serializer: &mut S) -> Result<(), S::Error>
-        where S: Serialize
-    {
+    #[cfg_attr(rustfmt, rustfmt_skip)]
+    fn serialize(&self, serializer: &mut S) -> Result<(), S::Error> where S: Serialize {
         self.0.serialize(serializer)
     }
 }

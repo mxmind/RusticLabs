@@ -14,6 +14,7 @@ extern crate rustc_serialize;
 #[cfg(feature = "plugins")]
 extern crate serde;
 
+
 #[cfg(test)]
 extern crate rand;
 extern crate num as num_lib;
@@ -22,7 +23,11 @@ extern crate num as num_lib;
 
 // public modules
 pub mod scale_factor;
+pub mod approxeq;
 pub mod length;
+pub mod matrix2d;
+pub mod matrix4d;
+
 pub mod point;
 pub mod size;
 pub mod num;

@@ -1,7 +1,5 @@
 use num::{One, Zero};
 use point::Point2D;
-use rect::Rect;
-use size::Size2D;
 use std::ops::{Add, Mul, Sub};
 
 #[derive(Clone, Copy)]
@@ -20,7 +18,7 @@ impl <T: Copy + Copy + PartialOrd +
          Add<T, Output=T> + Sub<T, Output=T> + Mul<T, Output=T> +
          One + Zero> Matrix2D<T> {
 
-    pub fn new(m11: T, m12: T, m21: T, m22: T, m31: T, m32: T) -> Matrix2D {
+    pub fn new(m11: T, m12: T, m21: T, m22: T, m31: T, m32: T) -> Matrix2D<T> {
         Matrix2D {
             m11 : m11,
             m12 : m12,
@@ -61,7 +59,7 @@ impl <T: Copy + Copy + PartialOrd +
     }
 
     pub fn indentity() -> Matrix2D<T> {
-        let (_0, _1) = (T, T) = (Zero::zero(), One::one());
+        let (_0, _1):(T, T) = (Zero::zero(), One::one());
 
         return Matrix2D::new(
             _1.clone(),
